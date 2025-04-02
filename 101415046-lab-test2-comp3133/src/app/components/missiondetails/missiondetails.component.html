@@ -1,0 +1,46 @@
+<div class="details-wrapper" *ngIf="mission">
+    <h2 class="details-header">{{ mission.mission_name }} ({{ mission.flight_number }})</h2>
+ 
+   <!-- missiondetails.component.html -->
+ <mat-card *ngIf="mission" class="mission-details-card">
+   <mat-card-header>
+     <div mat-card-avatar>
+       <img [src]="mission.links.mission_patch" alt="Patch" width="40" height="40" />
+     </div>
+     <mat-card-title>{{ mission.mission_name }} ({{ mission.flight_number }})</mat-card-title>
+     <mat-card-subtitle>Launch Year: {{ mission.launch_year }}</mat-card-subtitle>
+   </mat-card-header>
+ 
+   <img mat-card-image [src]="mission.links.mission_patch" alt="Mission Patch"
+        style="max-width: 200px; margin: 1rem auto; display: block;">
+ 
+   <mat-card-content>
+     <p><strong>Mission ID(s):</strong> {{ mission.mission_id?.length ? mission.mission_id.join(', ') : '-' }}</p>
+     <p><strong>Rocket:</strong> {{ mission.rocket.rocket_name }} ({{ mission.rocket.rocket_type }})</p>
+     <p><strong>Launch Site:</strong> {{ mission.launch_site.site_name_long }}</p>
+     <p><strong>Successful Launch:</strong> {{ mission.launch_success === true ? 'Yes' : 'No' }}</p>
+     <p><strong>Successful Landing:</strong>
+       {{ mission.rocket?.first_stage?.cores?.[0]?.land_success === true ? 'Yes' : 
+          mission.rocket?.first_stage?.cores?.[0]?.land_success === false ? 'No' : 'No Data' }}
+     </p>
+     <p><strong>Details:</strong></p>
+     <p>{{ mission.details || 'N/A' }}</p>
+   </mat-card-content>
+ 
+   <mat-card-actions>
+     <a mat-icon-button [href]="mission.links.article_link" target="_blank" aria-label="Article">
+       <mat-icon>description</mat-icon>
+     </a>
+     <a mat-icon-button [href]="mission.links.wikipedia" target="_blank" aria-label="Wikipedia">
+       <mat-icon>language</mat-icon>
+     </a>
+     <a mat-icon-button [href]="mission.links.video_link" target="_blank" aria-label="Video">
+       <mat-icon>videocam</mat-icon>
+     </a>
+   </mat-card-actions>
+ </mat-card>
+   <button routerLink="/" class="back-button">
+     ← Back to Missions
+   </button>
+ </div>
+ 

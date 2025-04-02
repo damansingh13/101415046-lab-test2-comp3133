@@ -1,0 +1,70 @@
+.launches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  mat-card.launch-card {
+    background: linear-gradient(145deg, #e3f2fd, #bbdefb); /* Light blue gradient */
+    color: #333333;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for a lifted look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 16px;
+  }
+  
+  mat-card.launch-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+  }
+  
+  mat-card-title a {
+    color: #00695c; /* Dark teal for the title */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  mat-card-title a:hover {
+    text-decoration: underline;
+    color: #004d40; /* Darker teal on hover */
+  }
+  
+  mat-card-subtitle {
+    color: #555555;
+    font-size: 1rem;
+    margin-top: 4px;
+  }
+  
+  mat-card-actions a {
+    font-weight: 600;
+    color: #e91e63; /* Elegant pink for call-to-action links */
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  mat-card-actions a:hover {
+    color: #d32f2f;
+    transform: translateX(2px);
+  }
+  
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 12px;
+    background: linear-gradient(to right, #004d40, #00695c); /* Teal gradient */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for a more sophisticated look */
+    border-radius: 8px;
+  }
+  
+  .header {
+    font-size: 3rem; /* Larger header for better impact */
+    font-weight: 700;
+    color: #ffffff; /* White color for header text */
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
