@@ -11,7 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrls: ['./missionfilter.component.css']
 })
 export class MissionfilterComponent {
-  @Input() availableYears: string[] = [];
+  @Input() availableYears: string[] = [];  // List of available years for the dropdown
 
   @Output() filtersChanged = new EventEmitter<{
     year: string;
@@ -19,10 +19,11 @@ export class MissionfilterComponent {
     successfulLand: string;
   }>();
 
-  selectedYear = '';
-  selectedLaunch = '';
-  selectedLand = '';
+  selectedYear: string = '';  // Default value is empty
+  selectedLaunch: string = '';  // Default value is empty
+  selectedLand: string = '';  // Default value is empty
 
+  // Emits the selected filters to the parent component
   emitFilters() {
     this.filtersChanged.emit({
       year: this.selectedYear,
